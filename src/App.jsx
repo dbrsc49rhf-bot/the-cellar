@@ -7,7 +7,7 @@ const startingBottles = [
   { id: 3, name: "Basil Hayden", type: "Whiskey", count: 1, par: 1, supplier: "Pariott Head", image: "/bottles/basil-hayden.png" },
   { id: 4, name: "Kahlua", type: "Liqueur", count: 1, par: 1, supplier: "Pariott Head", image: "/bottles/kahlua.png" },
   { id: 5, name: "Jim Beam", type: "Whiskey", count: 2, par: 1, supplier: "Pariott Head", image: "/bottles/jim-beam.png" },
-  { id: 6, name: "Captain Morgan", type: "Rum", count: 1, par: 1, supplier: "Pariott Head", image: "/bottles/captain-morgain.png" },
+  { id: 6, name: "Captain Morgan", type: "Rum", count: 1, par: 1, supplier: "Pariott Head", image: "/bottles/captain-morgan.png" },
   { id: 7, name: "Crown Royal", type: "Whiskey", count: 2, par: 1, supplier: "Pariott Head", image: "/bottles/crown-royal.png" },
   { id: 8, name: "Maker's Mark", type: "Whiskey", count: 2, par: 2, supplier: "Pariott Head", image: "/bottles/makers-mark.png" },
   { id: 9, name: "Woodford Reserve", type: "Whiskey", count: 1, par: 1, supplier: "Pariott Head", image: "/bottles/woodford-reserve.png" },
