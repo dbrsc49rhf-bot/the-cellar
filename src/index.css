@@ -109,3 +109,25 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.category {
+  border: 1px solid #d7cbb8;
+  background: rgba(255, 255, 255, 0.6);
+  color: #0d211b;
+  border-radius: 999px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.category.active {
+  background: #52633f;
+  color: white;
+  border-color: #52633f;
+}

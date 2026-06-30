@@ -49,13 +49,21 @@ function App() {
   const [activePage, setActivePage] = useState("inventory");
   const [searchTerm, setSearchTerm] = useState("");
   const [bottles, setBottles] = useState(startingBottles);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const categories = ["All", ...new Set(bottles.map((bottle) => bottle.type))];
 
   const filteredBottles = useMemo(() => {
-    return bottles.filter((bottle) =>
-      bottle.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [bottles, searchTerm]);
+  return bottles.filter((bottle) => {
+    const matchesSearch = bottle.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
 
+    const matchesCategory =
+      selectedCategory === "All" || bottle.type === selectedCategory;
+
+    return matchesSearch && matchesCategory;
+  });
+}, [bottles, searchTerm, selectedCategory]);
   const orderList = bottles.filter((bottle) => bottle.count < bottle.par);
 
   function updateCount(id, change) {
@@ -105,6 +113,17 @@ function App() {
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
+          <div className="category-bar">
+  {categories.map((category) => (
+    <button
+      key={category}
+      className={selectedCategory === category ? "category active" : "category"}
+      onClick={() => setSelectedCategory(category)}
+    >
+      {category}
+    </button>
+  ))}
+</div>
 
           <div className="bottle-list">
             {filteredBottles.map((bottle) => (
